@@ -26,7 +26,7 @@ CryptoMinerPro is aimed at developers who need a straightforward, dependable sol
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/harutosati/CryptoMinerPro.git`
+1. Clone the repository: `git clone https://github.com/centxyz/CryptoMinerPro.git`
 2. Install required dependencies: `pip install -r requirements.txt`
 
 ## Configuration
@@ -42,4 +42,4 @@ Pull requests and issue reports are both welcome. Please read the existing code 
 
 ## License
 
-Released under the MIT License — see the [LICENSE](https://github.com/harutosati/CryptoMinerPro/blob/main/LICENSE) file.
+Released under the MIT License — see the [LICENSE](https://github.com/centxyz/CryptoMinerPro/blob/main/LICENSE) file.
