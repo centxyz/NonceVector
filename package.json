@@ -1,7 +1,7 @@
 {
   "name": "cryptominerpro",
   "version": "1.0.0",
-  "description": "CryptoMinerPro - A powerful JavaScript application",
+  "description": "CryptoMinerPro JavaScript starter processor with retry scaffolding",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
