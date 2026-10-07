@@ -1,9 +1,9 @@
 {
-  "name": "cryptominerpro",
+  "name": "noncefoundry",
   "version": "2.0.0",
   "description": "Bounded multi-worker SHA-256 proof-of-work CLI",
   "main": "src/cryptominerpro.js",
-  "bin": { "cryptominerpro": "src/index.js" },
+  "bin": { "noncefoundry": "src/index.js" },
   "scripts": { "start": "node src/index.js", "test": "node --test tests/*.test.js" },
   "keywords": ["sha256", "proof-of-work", "hashcash", "worker-threads"],
   "author": "cent",

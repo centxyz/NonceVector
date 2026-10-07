@@ -1,6 +1,6 @@
-# CryptoMinerPro
+# NonceFoundry
 
-CryptoMinerPro is a bounded, multi-worker SHA-256 proof-of-work CLI for education, test fixtures, and Hashcash-style challenges. It mines a nonce for a message, verifies proofs without trusting the miner, measures local SHA-256 throughput, and always supports an explicit work limit.
+NonceFoundry is a bounded, multi-worker SHA-256 proof-of-work CLI for education, test fixtures, and Hashcash-style challenges. It mines a nonce for a message, verifies proofs without trusting the miner, measures local SHA-256 throughput, and always supports an explicit work limit.
 
 It is not a Bitcoin pool client, does not use a wallet, and does not promise mining income.
 
@@ -17,8 +17,8 @@ It is not a Bitcoin pool client, does not use a wallet, and does not promise min
 ## Install
 
 ```bash
-git clone https://github.com/centxyz/CryptoMinerPro.git
-cd CryptoMinerPro
+git clone https://github.com/centxyz/NonceFoundry.git
+cd NonceFoundry
 npm install
 ```
 

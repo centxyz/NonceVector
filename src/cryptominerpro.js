@@ -23,7 +23,7 @@ function mineRange({ message, difficulty, start = 0, step = 1, maxAttempts = Inf
 
 if (!isMainThread && workerData?.type === 'mine') parentPort.postMessage(mineRange(workerData.options));
 
-class CryptoMinerPro {
+class NonceFoundry {
   constructor({ workers = Math.max(1, cpus().length - 1) } = {}) {
     if (!Number.isInteger(workers) || workers < 1 || workers > 64) throw new Error('Workers must be an integer from 1 to 64');
     this.workers = workers;
@@ -68,10 +68,12 @@ class CryptoMinerPro {
   benchmark({ durationMs = 1000 } = {}) {
     if (!Number.isInteger(durationMs) || durationMs < 50 || durationMs > 60_000) throw new Error('Benchmark duration must be between 50 and 60000ms');
     const start = Date.now(); let attempts = 0;
-    while (Date.now() - start < durationMs) { hashCandidate('cryptominerpro-benchmark', attempts); attempts += 1; }
+    while (Date.now() - start < durationMs) { hashCandidate('noncefoundry-benchmark', attempts); attempts += 1; }
     const elapsedMs = Date.now() - start;
     return { algorithm: 'sha256', attempts, elapsedMs, hashesPerSecond: Math.round(attempts / (elapsedMs / 1000)) };
   }
 }
 
-module.exports = { CryptoMinerPro, hashCandidate, meetsDifficulty, mineRange };
+const CryptoMinerPro = NonceFoundry;
+
+module.exports = { NonceFoundry, CryptoMinerPro, hashCandidate, meetsDifficulty, mineRange };
