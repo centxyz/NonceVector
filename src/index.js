@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 const minimist = require('minimist');
-const { NonceFoundry } = require('./cryptominerpro');
+const { NonceVector } = require('./cryptominerpro');
 
-const help = `NonceFoundry — bounded SHA-256 proof-of-work tool
+const help = `NonceVector — bounded SHA-256 proof-of-work tool
 
 Usage:
-  noncefoundry mine MESSAGE [--difficulty BITS] [--workers N] [--max-attempts N]
-  noncefoundry verify MESSAGE --nonce N --hash HEX --difficulty BITS
-  noncefoundry benchmark [--duration MS]
+  noncevector mine MESSAGE [--difficulty BITS] [--workers N] [--max-attempts N]
+  noncevector verify MESSAGE --nonce N --hash HEX --difficulty BITS
+  noncevector benchmark [--duration MS]
 
 Difficulty is the number of leading zero bits required (default: 20).
 Mining is CPU-intensive and is intended for education, testing, and Hashcash-style proofs.`;
@@ -15,7 +15,7 @@ Mining is CPU-intensive and is intended for education, testing, and Hashcash-sty
 async function main() {
   const args = minimist(process.argv.slice(2), { string: ['hash'], boolean: ['help'], alias: { h: 'help' } });
   if (args.help || !args._[0]) { console.log(help); return; }
-  const miner = new NonceFoundry({ workers: args.workers == null ? undefined : Number(args.workers) });
+  const miner = new NonceVector({ workers: args.workers == null ? undefined : Number(args.workers) });
   const command = String(args._[0]); const message = String(args._[1] || '');
   let result;
   if (command === 'mine') result = await miner.mine(message, { difficulty: args.difficulty == null ? 20 : Number(args.difficulty), maxAttempts: args['max-attempts'] == null ? 50_000_000 : Number(args['max-attempts']) });
