@@ -54,3 +54,9 @@ npm test
 ## License
 
 MIT © cent
+
+## Current limitations
+
+- The miner is intended for bounded educational and test workloads, not cryptocurrency mining.
+- Performance varies by hardware and runtime, and high difficulty can exhaust the configured work limit.
+- Proofs authenticate computational effort for the exact message only; they do not provide identity or authorization.
